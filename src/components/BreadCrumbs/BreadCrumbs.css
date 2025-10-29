@@ -1,0 +1,49 @@
+:root {
+  --active_color: black;
+  --additional_color: gray;
+}
+
+.breadcrumbs {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  padding: 20px 0;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  background-color: white;
+  max-width: 1000px;
+}
+
+.breadcrumbs * {
+  color: var(--additional_color);
+  transition: 0.5s;
+}
+
+.breadcrumbs *:not(.slash):hover {
+  color: var(--active_color);
+}
+
+.breadcrumbs li {
+  position: relative;
+  cursor: pointer;
+}
+
+.breadcrumbs li:last-child {
+  color: var(--active_color);
+  font-weight: 500;
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .breadcrumbs {
+    padding: 15px 0;
+    max-width: calc(100% - 40px);
+  }
+}
